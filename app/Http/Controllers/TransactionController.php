@@ -76,7 +76,7 @@ class TransactionController extends Controller
          * 4. Na dúvida da solução e para evitar implementações desnecessárias, incluirei neste controller. ok?
          */
 
-        if ($value > 100)
+        if ($value >= 100)
             throw new \InvalidArgumentException('[value] acima do limite', 401);
 
         $transaction = new Transaction();
