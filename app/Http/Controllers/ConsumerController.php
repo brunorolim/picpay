@@ -39,7 +39,7 @@ class ConsumerController extends Controller
             throw new ValidationException($validator);
 
         if(!$this->user->where('id', $request->input('user_id'))->exists())
-            throw new \InvalidArgumentException('[user_id] não localizado');
+            throw new \InvalidArgumentException('Usuário não encontrado', 404);
 
         $consumer = new Consumer();
         $consumer->fill($request->all());

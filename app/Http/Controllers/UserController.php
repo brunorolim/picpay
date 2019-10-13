@@ -1,7 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Consumer;
+use App\Seller;
 use App\User;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -34,7 +38,9 @@ class UserController extends Controller
                 $query->where('username', 'LIKE', "{$queryFilter}%");
             })->orWhereHas('seller', function ($query) use ($queryFilter) {
                 $query->where('username', 'LIKE', "{$queryFilter}%");
-            })->get();
+            })
+            ->orderBy('full_name')
+            ->get();
         return response()->json($result);
     }
 
@@ -61,15 +67,18 @@ class UserController extends Controller
      */
     public function load($user_id)
     {
-        $result = $this->user->with(['consumer', 'seller'])->find($user_id);
-        if(empty($result))
-            throw new \InvalidArgumentException('[user_id] não localizado');
+        $user = $this->user->with(['consumer', 'seller'])->find($user_id);
+        if(empty($user))
+            throw new \InvalidArgumentException('Usuário não encontrado', 404);
 
-        $result['accounts']  = [
-            'consumer' => $result['consumer'],
-            'seller' => $result['seller']
+        $result = [
+            'accounts' => [
+                'consumer' => $user['consumer'],
+                'seller' => $user['seller']
+            ],
+            'user' => $user
         ];
-        unset($result['consumer'], $result['seller']);
+        unset($user['consumer'], $user['seller']);
 
         return response()->json($result);
     }

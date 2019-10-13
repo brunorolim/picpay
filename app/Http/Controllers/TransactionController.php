@@ -50,12 +50,12 @@ class TransactionController extends Controller
         if(!$this->consumer->where('id', $request->input('payee_id'))->exists() &&
             !$this->seller->where('id', $request->input('payee_id'))->exists()
         )
-            throw new \InvalidArgumentException('[payee_id] não localizado');
+            throw new \InvalidArgumentException('[payee_id] não encontrado', 404);
 
         if(!$this->consumer->where('id', $request->input('payer_id'))->exists() &&
             !$this->seller->where('id', $request->input('payer_id'))->exists()
         )
-            throw new \InvalidArgumentException('[payer_id] não localizado');
+            throw new \InvalidArgumentException('[payer_id] não encontrado', 404);
 
         $value = $request->input('value');
 
@@ -77,7 +77,7 @@ class TransactionController extends Controller
          */
 
         if ($value >= 100)
-            throw new \InvalidArgumentException('[value] acima do limite', 401);
+            throw new \InvalidArgumentException('Transação não autorizada', 401);
 
         $transaction = new Transaction();
         $transaction->transaction_date = date("Y-m-d\TH:i:s\Z");
@@ -95,7 +95,7 @@ class TransactionController extends Controller
     {
         $result = $this->transaction->find($transaction_id);
         if(empty($result))
-            throw new \InvalidArgumentException('[transaction_id] não localizado');
+            throw new \InvalidArgumentException('Transação não encontrada', 404);
 
         return response()->json($result);
     }

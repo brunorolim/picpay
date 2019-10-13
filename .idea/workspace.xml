@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51390d9b-d511-46a7-96a6-286a95ae87dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConsumerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConsumerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SellerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,19 +121,19 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../acpc" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projetos\entrevistas\PicPay\app\Http" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projetos\entrevistas\PicPay\tests" />
       <recent name="D:\Projetos\entrevistas\PicPay\app\Helpers" />
       <recent name="D:\Projetos\entrevistas\PicPay\app\Http\Controllers" />
       <recent name="D:\Projetos\entrevistas\PicPay\app" />
       <recent name="D:\Projetos\entrevistas\PicPay\app\Requests" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projetos\entrevistas\PicPay\app\Http" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -144,6 +148,12 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -155,7 +165,10 @@
       <option name="presentableId" value="Default" />
       <updated>1570717259594</updated>
       <workItem from="1570717260782" duration="238000" />
-      <workItem from="1570720371817" duration="26479000" />
+      <workItem from="1570720371817" duration="26540000" />
+      <workItem from="1570886792766" duration="9311000" />
+      <workItem from="1570927136981" duration="3665000" />
+      <workItem from="1570936049447" duration="1268000" />
     </task>
     <servers />
   </component>
@@ -167,7 +180,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
